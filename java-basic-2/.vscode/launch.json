@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "XmasTree",
+            "request": "launch",
+            "mainClass": "XmasTree",
+            "projectName": "java-basic-2_4193d163"
+        },
+        {
+            "type": "java",
             "name": "MyExceptionHoliday",
             "request": "launch",
             "mainClass": "MyExceptionHoliday",
