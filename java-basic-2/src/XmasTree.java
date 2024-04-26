@@ -8,23 +8,30 @@ public class XmasTree {
         String[] word = str.split(",");
 
         for (int k = 1; k <= Integer.parseInt(word[0]); k++) {
+            int a = 0;
 
-            for (int i = 1; i <= Integer.parseInt(word[0]) - k; i++) // 左側の余白作り
-                if (i % 2 != 0) {
+            for (int i = 1; i <= Integer.parseInt(word[0]) - k; i++) { // 左側の余白作り
+                if ((a + k) % 2 != 0) {
                     System.out.print(word[3]);
                 } else {
                     System.out.print(" ");
                 }
+                a++;
+            }
 
-            for (int i = 1; i <= 2 * k - 1; i++) // ツリーの横一列
+            for (int i = 1; i <= 2 * k - 1; i++) { // ツリーの横一列
                 System.out.print("*");
+                a++;
+            }
 
-            for (int i = 1; i <= Integer.parseInt(word[0]) - k; i++) // 左側の余白作り
-                if (i % 2 != 0) {
+            for (int i = 0; i <= Integer.parseInt(word[0]) - k; i++) { // 右側の余白作り
+                if ((a + k) % 2 != 0) {
                     System.out.print(word[3]);
                 } else {
                     System.out.print(" ");
                 }
+                a++;
+            }
 
             System.out.println(" "); // 改行
         }
