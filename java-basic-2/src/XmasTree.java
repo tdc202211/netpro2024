@@ -33,6 +33,7 @@ public class XmasTree {
                 a++;
             }
 
+            
             System.out.println(" "); // 改行
         }
 
