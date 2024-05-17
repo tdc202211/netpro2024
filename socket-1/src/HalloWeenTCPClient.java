@@ -24,7 +24,7 @@ public class HalloWeenTCPClient {
             String content = scanner.next();
             scanner.close();
 
-            XmasPresent present = new XmasPresent();
+            HalloWeenPresent present = new HalloWeenPresent();
             present.setMessage(message);
             present.setContent(content);
 
@@ -33,7 +33,7 @@ public class HalloWeenTCPClient {
 
             ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
 
-            XmasPresent okaeshiPresent = (XmasPresent) ois.readObject();
+            HalloWeenPresent okaeshiPresent = (HalloWeenPresent) ois.readObject();
 
             String replayMsg = okaeshiPresent.getMessage();
             System.out.println("サーバからのメッセージは" + replayMsg);

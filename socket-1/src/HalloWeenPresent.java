@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class HalloWeenPreent implements Serializable {
+public class HalloWeenPresent implements Serializable {
 
     String message;
     String content;

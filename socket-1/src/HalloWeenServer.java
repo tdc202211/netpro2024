@@ -36,7 +36,7 @@ public class HalloWeenServer {
 
             ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
 
-            XmasPresent present = (XmasPresent) ois.readObject();// Integerクラスでキャスト。
+            HalloWeenPresent present = (HalloWeenPresent) ois.readObject();// Integerクラスでキャスト。
 
             String msgPresent = present.getMessage();
             System.out.println("メッセージは" + msgPresent);
@@ -45,7 +45,7 @@ public class HalloWeenServer {
 
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
 
-            XmasPresent response = new XmasPresent();
+            HalloWeenPresent response = new HalloWeenPresent();
             response.setMessage("サーバーです。ハッピーハロウィン！\n" + presentFromClient + "ありがとう。\nプレゼントのお返しは" + times + "倍" + "です");
             response.setContent(serverProcess(presentFromClient));
 
