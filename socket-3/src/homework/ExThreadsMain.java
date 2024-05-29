@@ -1,6 +1,6 @@
 package homework;
 
-public class CountAZTenRunnable implements Runnable {
+public class ExThreadsMain implements Runnable {
     String myAlfabetStr = "noalfabet";
 
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class CountAZTenRunnable implements Runnable {
 
         for (int i = 0; i < 26; i++) {
             list[i] = new CountAZTenRunnable();
-            list[i].setChar(c1 + "");
+            list[i].setChar("Alphabet：" + c1);
             c1 = (char) (97 + i);
             th[i] = new Thread(list[i]);
             th[i].start();
@@ -26,7 +26,7 @@ public class CountAZTenRunnable implements Runnable {
     public void run() {
         try {
             for (int i = 0; i < 11; i++) {
-                System.out.println(myAlfabetStr + i);
+                System.out.println(myAlfabetStr + "：" + i);
                 // スレッドを 1000 ミリ秒間一時停止します。
                 Thread.sleep(500); // ミリ秒単位のスリープ時間
             }
@@ -34,6 +34,5 @@ public class CountAZTenRunnable implements Runnable {
             // スレッドが中断された場合は、例外を出力します。
             System.err.println(e);
         }
-
     }
 }
